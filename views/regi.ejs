@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+    background-image: linear-gradient(90deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+    flex-direction: column;
+  }
+
+  .navbar {
+    width: 100%;
+    margin-bottom: 44px;
+    background-image: linear-gradient(to right, #0acffe 0%, #97a1ff 100%);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.418);
+
+  }
+
+  .navbar a {
+    margin: 2px 25px;
+    color: #032288;
+    font-size: 23px;
+    font-weight: 400;
+    text-transform: none;
+    text-decoration: none;
+  }
+
+  .navbar .navbar-brand {
+    margin: 2px 25px;
+    color: rgb(6, 31, 145);
+    font-size: 26px;
+
+  }
+
+  .navbar .navbar-brand:hover {
+    color: azure;
+  }
+
+
+  .navbar-nav .nav-link {
+    color: #032288 !important;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: white !important;
+  }
+
+
+  /*    ------------ form  ----------------  */
+  .containerp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+
+  form {
+    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 100px;
+    margin: 33px;
+
+  }
+
+  h1 {
+    margin-bottom: 40px;
+    color: #032288;
+  }
+
+  button {
+    border-radius: 10px;
+    border: 1px solid #347eee;
+    background-color: #3750dd;
+
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  button a {
+    color: #ffffff !important;
+  }
+
+  button a:hover {
+    text-decoration: none;
+    ;
+  }
+
+
+  button:focus {
+    outline: none;
+  }
+
+  label {
+    font-size: 19px;
+  }
+
+  input {
+    background-color: #eee;
+    border: none;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/home">Spanco Web Technology</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav  ml-auto">
+        <a class="nav-item nav-link" href="/">Sign-UP</a>
+        <a class="nav-item nav-link" href="/login">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="containerp">
+    <form action="/register" method="post">
+      <h1>Register Now!</h1>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" placeholder="Username" class="form-control" required name="username">
+
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="email" class="form-control" required name="email">
+
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="password" class="form-control" required name="password">
+
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" placeholder="confirm password" class="form-control" required name="confirm">
+
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        background-image: linear-gradient(to right, #0acffe 0%, #a472ff 100%);
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.418);
+    }
+
+    .navbar a {
+        margin: 2px 25px;
+        font-size: 24px;
+        font-weight: 400;
+        text-transform: none;
+        text-decoration: none;
+    }
+
+    .navbar .navbar-brand {
+        margin: 2px 25px;
+        color: rgb(255, 255, 255);
+        font-size: 27px;
+    }
+
+    .navbar .navbar-brand:hover {
+        color: #0d2b8d !important;
+    }
+
+    .navbar-nav .nav-link {
+        color: #051f75 !important;
+        line-height: 20px;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: white !important;
+    }
+
+
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins';
+        background-image: linear-gradient(90deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+    }
+
+    .containerp {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px;
+        flex-direction: column;
+    }
+
+    .slide {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff5e1e7;
+        margin: 40px;
+
+        padding: 60px;
+        gap: 153px;
+    }
+
+    @media (max-width: 1100px) {
+        .slide {
+            flex-wrap: wrap;
+            margin: 40px 10px;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .slide>* {
+            flex: 1 1 calc(50% - 30px);
+            box-sizing: border-box;
+        }
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+    }
+
+
+
+
+    #some {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+        color: rgba(218, 8, 8, 0.89);
+        font-family: 'Poppins';
+    }
+
+    .pro {
+        color: rgb(2, 2, 78);
+        font-weight: 600;
+    }
+
+    .tex {
+        color: rgb(146, 142, 136);
+        font-size: 18px;
+        margin: 15px 0;
+    }
+
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fffefccb;
+        width: 250px;
+        height: 95px;
+        margin-top: 30px;
+        border-radius: 35px;
+        border: 1px solid rgb(241, 234, 234);
+        border-left: 2.5px solid #ff4d4d;
+    }
+
+    .box img {
+        overflow: hidden;
+        position: relative;
+        left: -8%;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: #ce1c1c;
+        object-fit: cover;
+    }
+
+    .p1,
+    .p2 {
+        position: relative;
+        left: -4%;
+        padding-top: 15px;
+        color: rgb(2, 2, 78);
+        background-color: rgb(255, 255, 255);
+    }
+
+    .p1 {
+        font-weight: 500;
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .p2 {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: -1px;
+    }
+
+    .horizontal-line {
+        width: 100%;
+        height: 1px;
+        background-color: rgb(59, 59, 59);
+        margin: 15px 0;
+        color: white;
+    }
+
+
+
+    .navbar-nav .nav-item {
+        margin-right: -12px;
+    }
+
+    .custom-dropdown-menu {
+        background-image: linear-gradient(to right, #0acffe 0%, #a472ff 100%);
+    }
+
+    .custom-dropdown-menu .dropdown-item {
+        color: #100e93;
+    }
+
+    .custom-dropdown-menu .dropdown-item:hover {
+        color: #fff;
+        background-color: transparent;
+    }
+
+    .faq-box {
+        border-radius: 8px;
+        padding: 20px;
+        /* background-color: rgba(175, 255, 244, 0.815); */
+
+    }
+
+    .faq-box:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-item {
+        margin-bottom: 20px;
+    }
+
+    .faq-question {
+        color: rgb(2, 2, 78);
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .faq-icons {
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+        /* Que  ko left se gap--------------  */
+    }
+
+    .faq-question button {
+        background: none !important;
+        border: none !important;
+        cursor: pointer;
+    }
+
+    .faq-answer {
+        color: rgb(106, 104, 101);
+        margin-right: 30px;
+        display: none;
+        padding: 11px;
+        padding-left: 62px;
+        /* ans ko left se  padding */
+        margin-top: 20px;
+    }
+
+    .faq-icons .fa-plus,
+    .faq-icons .fa-minus {
+        color: red;
+        padding: 9px;
+        border-radius: 10%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .faq-icons .fa-plus {
+        background-color: white;
+        border: 2px solid red;
+    }
+
+    .faq-icons .fa-minus {
+        background-color: red;
+        color: white;
+        border: 2px solid red;
+    }
+
+    .faq-icons .fa-plus:focus,
+    .faq-icons .fa-minus:focus {
+        outline: none;
+    }
+
+    .faq-icons .fa-plus:focus,
+    .faq-icons .fa-minus:focus {
+        outline: none;
+    }
+
+    .faq-item hr {
+        border: none;
+        height: 2px;
+        background-color: rgb(126, 124, 124);
+        margin: 15px 0;
+        font-weight: bold;
+        /* Add this line to make the line bold */
+    }
+
+    .question-text.clicked {
+        color: red;
+    }
+
+    .right h5 {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-top: 155px;
+
+
+
+    }
+
+
+    #btn {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+</style>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <a class="navbar-brand" href="#">Spanco Web Technology</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link custom-gap" href="/home">Home</a>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="addPanelDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Section</a>
+                    <div class="dropdown-menu custom-dropdown-menu" aria-labelledby="addPanelDropdown">
+                        <a class="dropdown-item" href="/addpanel">Panel</a>
+                        <a class="dropdown-item" href="#">FAQ </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="containerp">
+        <% tasks.forEach(task=> { %>
+            <div class="slide">
+                <div class="left">
+                    <p id="some">
+                        <%= task.task %>
+                    </p>
+                    <h1 class="pro">
+                        <%= task.term %>
+                    </h1>
+                    <p class="tex">
+                        <%= task.description %>.
+                    </p>
+                    <div class="box">
+                        <img src="http://localhost:3000/uploads/<%= task.image %>" name="image">
+                        <p class="p1">
+                            <%= task.award %>+
+                        </p>
+                        <p class="p2">Winning Award</p>
+                    </div>
+
+                    <h5 id="btn"><a href="/update/<%= task._id %>"> <button class="btn btn-info">Update
+                                Panel</button></a>
+                    </h5>
+                </div>
+
+                <div class="right">
+                    <div class="faq-box">
+                        <div class="faq-item">
+                            <hr>
+                            <div class="faq-question">
+                                <div class="faq-icons">
+                                    <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <span class="question-text">What is HTML?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>HTML stands for HyperText Markup Language. It is the standard markup language for
+                                    creating web pages and web applications.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <hr>
+                            <div class="faq-question">
+                                <div class="faq-icons">
+                                    <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <span class="question-text">What is CSS?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>CSS stands for Cascading Style Sheets. It is used to style the presentation of a
+                                    document written in HTML.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <hr>
+                            <div class="faq-question">
+                                <div class="faq-icons">
+                                    <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <span class="question-text">What is JavaScript?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>JavaScript is a programming language that enables interactive web pages. It is
+                                    commonly used for client-side scripting.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <hr>
+                            <div class="faq-question">
+                                <div class="faq-icons">
+                                    <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <span class="question-text">What is Mern Stack </span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Mern Stack is A set of technology, Which is used in our web development, in this
+                                    Stack
+                                    We have MongoDB, Express.js, Node.js, React.js</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5><a href="/delete/<%= task._id %>"> <button class="btn btn-danger">Remove Panel</button></a>
+                    </h5>
+
+                </div>
+            </div>
+            <% }) %>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script>
+        $(document).ready(function () {
+            $('.toggle-answer').click(function () {
+                var answer = $(this).closest('.faq-item').find('.faq-answer');
+                $('.faq-answer').not(answer).slideUp(); // Hide other answers
+                answer.slideToggle(); // Toggle the clicked answer
+                $('.toggle-answer i').not($(this).find('i')).removeClass('fa-minus').addClass('fa-plus'); // Reset other icons
+                $('.toggle-answer i').not($(this).find('i')).closest('.faq-icons').removeClass('active');
+                $(this).find('i').toggleClass('fa-plus fa-minus'); // Toggle icon
+                $(this).closest('.faq-icons').toggleClass('active');
+
+                // Add class to change color of clicked question text
+                $('.question-text').removeClass('clicked');
+                $(this).closest('.faq-question').find('.question-text').toggleClass('clicked');
+            });
+        });
+    </script>
+</body>
+
+</html>
